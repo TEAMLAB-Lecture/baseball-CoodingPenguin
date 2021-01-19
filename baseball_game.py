@@ -244,7 +244,7 @@ def main():
         while True:
           # 재게임 여부를 물어봄
           ask_again_input = input("You win, one more(Y/N)?")
-          # Yes일 경우 새로운 랜덤 숫자를 입력 받음
+          # Yes일 경우 새로운 랜덤 숫자 생성
           if is_yes(ask_again_input):
             random_number = str(get_not_duplicated_three_digit_number())
             print("Random Number is : ", random_number)
