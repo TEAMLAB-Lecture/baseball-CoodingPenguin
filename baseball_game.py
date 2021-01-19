@@ -126,9 +126,10 @@ def get_not_duplicated_three_digit_number():
       >>> bg.get_not_duplicated_three_digit_number()
       381
     '''
-    import random
-    cands = list(filter(lambda x: not is_duplicated_number(str(x)), range(100, 1000)))
-    return random.choice(cands)
+    while True:
+        number = get_random_number()
+        if not is_duplicated_number(str(number)):
+            return number
 
 
 def get_strikes_or_ball(user_input_number, random_number):
@@ -228,6 +229,8 @@ def main():
     flag = False 
     while True:
         user_input_number = input("Input guess number : ")
+        if user_input_number == "0":
+            break
         if is_validated_number(user_input_number):
             strikes, balls = get_strikes_or_ball(user_input_number, random_number)
             print(f"Strikes : {strikes} , Balls : {balls}")
